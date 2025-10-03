@@ -1,15 +1,40 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
     <script src="https://files.bpcontent.cloud/2025/08/07/11/20250807111821-CTEU70PY.js" defer></script> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3a435d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Play Tools">
+    <link rel="apple-touch-icon" href="public/icons/icon.png">
     <title>Play Tools Pro</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-*{
+:root{
+--base-color:white;
+--base-variant:whitesmoke;
+--text-color:#111528;
+--secondary-text:#232738;
+--primary-color:#3a435d;
+--accent-color:#00ffee;
+}
+
+.darkmode{
+    --base-color:#070b1d;
+    --base-variant:#101425;
+    --text-color:#fff;
+    --primary-color:#3a435d;
+    --accent-color:#00ffee;
+}
+
+
+        *{
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -27,6 +52,7 @@ header{
     box-shadow: 0 0 10px rgba(128, 128, 128, 0.336);
     display: flex;
     align-items: center;
+    background-color: var(--base-color);
     justify-content: space-between;
 }
 
@@ -38,6 +64,7 @@ li{
 }
 
 main{
+    background-color: var(--base-color);
     width:100vw;
     height: calc(100vh - 70px);
     display: flex;
@@ -81,6 +108,7 @@ section{
     grid-auto-flow: row;
     padding: 1rem;
     justify-content:center ;
+    background-color: var(--base-color);
 }
 
 img{
@@ -229,15 +257,59 @@ img{
     z-index:500;
 }
 
+.button{
+    width:200px;
+    height:40px;
+    color:white;
+    border-radius: 10px;
+    cursor:pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(60deg,#00fe61,#00ffff);
+    text-decoration: none;
+}
+
+.head-item{
+    display:flex;
+    align-items: center;
+    justify-content: end;
+    gap:1rem;
+}
+#theme-switch{
+    position: fixed;
+    z-index:100000;
+    top: 85%;
+    left:91%;
+    width:clamp(50px,60px,200px);
+    height:clamp(50px,60px,200px);
+    border-radius: 50%;
+    background-color: #00fe61;
+    border:none;
+    cursor: pointer;
+}
     </style>
+
+    <link rel="manifest" href="manifest.json">
     <link href="https://cdn.jsdelivr.net/npm/@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css" rel="stylesheet">
+
 </head>
-<body>
+<body class="darkmode">
+    <button id="theme-switch"><i class="fi fi-rr-background"></i></button>
     <header>
+
         <h1 class="head">Play Tools</h1>
+        <div class="head-item">
+            
         <ul>
-            <li><i class="fi fi-br-circle-user"></i></li>
-        </ul>
+                <li><i class="fi fi-br-circle-user"></i></li>
+            </ul>
+            <a class="button" href="M Centers 8th Edition 8.0.1.3 x64 (1).zip" download>Download Zip</a>
+          <button class="button"id="installBtn">
+                        📥 Download App
+                </button>
+        </div>
     </header>
     <main>
         <nav class="navbar">
@@ -249,50 +321,170 @@ img{
             </ul>
         </nav>
         <section>
-            <div class="card card1"><img src="cool.webp" alt=""></div>
-            <div class="card card2"><img src="fortnite.webp" alt=""></div>
-            <div class="card card3"><img src="cooling.avif" alt=""></div>
-            <div class="card card4"><img src="roblox.avif" alt=""></div>
-            <div class="card card5"><img src="pokemon.avif" alt=""></div>
-            <div class="card card6"><img src="fc.avif" alt=""></div>
-            <div class="card card7"><img src="nba_.avif" alt=""></div>
-            <div class="card card8"><img src="carracing.jpg" alt=""></div>
-            <div class="card card9"><img src="cc.jpg" alt=""></div>
-            <div class="card card10"><img src="sonic.jpg" alt=""></div>
+            <div class="card card1"><img src="public/cool.webp" alt=""></div>
+            <div class="card card2"><img src="public/fortnite.webp" alt=""></div>
+            <div class="card card3"><img src="public/cooling.avif" alt=""></div>
+            <div class="card card4"><img src="public/roblox.avif" alt=""></div>
+            <div class="card card5"><img src="public/pokemon.avif" alt=""></div>
+            <div class="card card6"><img src="public/fc.avif" alt=""></div>
+            <div class="card card7"><img src="public/nba_.avif" alt=""></div>
+            <div class="card card8"><img src="public/carracing.jpg" alt=""></div>
+            <div class="card card9"><img src="public/cc.jpg" alt=""></div>
+            <div class="card card10"><img src="public/sonic.jpg" alt=""></div>
         </section>
     </main>
 
     <div class="cover">
 
     </div>
-   <a href="https://apktoy.com/download/com.mojang.minecraftpe_1.21.100.6_free.html"><button class="install">Install</button></a>
+   <a href="https://apktoy.com/download/com.mojang.minecraftpe_1.21.111.1_free.html"><button class="install">Install</button></a>
     <i class="fi fi-br-cross x"></i>
-<script>
+<script type="text/javascript">
+    // Card interaction logic
     const card = document.querySelectorAll('.card');
-const cover = document.querySelector('.cover');
-const install = document.querySelector('.install')
-const x = document.querySelector('.x');
+    const cover = document.querySelector('.cover');
+    const install = document.querySelector('.install')
+    const x = document.querySelector('.x');
 
-card.forEach(
-    (card)=>{
-        card.addEventListener('click',()=>{
+    card.forEach((card) => {
+        card.addEventListener('click', () => {
             cover.classList.add('active');
             card.classList.add('active');
             install.classList.add('active');
-            x.classList.add('active')
-            
+            x.classList.add('active');
 
-            x.addEventListener('click',()=>{
-            cover.classList.remove('active');
-            card.classList.remove('active');
-            install.classList.remove('active');
-            x.classList.remove('active')
-})
-    
+            x.addEventListener('click', () => {
+                cover.classList.remove('active');
+                card.classList.remove('active');
+                install.classList.remove('active');
+                x.classList.remove('active');
+            });
+        });
+    });
+
+    // Dark mode functionality
+    document.addEventListener("DOMContentLoaded", function () {
+        const darkmode = localStorage.getItem('darkmode');
+        const themeSwitch = document.getElementById('theme-switch');
+
+        const enableDarkmode = () => {
+            document.body.classList.add('darkmode')
+            localStorage.setItem('darkmode', 'active')
         }
-)});
 
+        const disableDarkmode = () => {
+            document.body.classList.remove('darkmode')
+            localStorage.setItem('darkmode', 'inactive')
+        }
+
+        if (darkmode === 'active') {
+            enableDarkmode();
+        } else {
+            disableDarkmode();
+        }
+
+        themeSwitch.addEventListener('click', () => {
+            if (document.body.classList.contains('darkmode')) {
+                disableDarkmode();
+            } else {
+                enableDarkmode();
+            }
+        });
+    });
+
+    // Enhanced PWA Installation Logic
+    let deferredPrompt;
+    const installBtn = document.getElementById("installBtn");
+
+    // Check if app is already installed
+    function isPWAInstalled() {
+        return window.matchMedia('(display-mode: standalone)').matches || 
+               window.navigator.standalone === true;
+    }
+
+    // Hide install button permanently
+    function hideInstallButton() {
+        installBtn.style.display = "none";
+        localStorage.setItem('pwaInstalled', 'true');
+    }
+
+    // Show install button
+    function showInstallButton() {
+        installBtn.style.display = "block";
+    }
+
+    // Check installation status on page load
+    if (isPWAInstalled() || localStorage.getItem('pwaInstalled') === 'true') {
+        hideInstallButton();
+    } else {
+        installBtn.style.display = "none"; // Hide by default, show only when prompt available
+    }
+
+    // Listen for beforeinstallprompt event
+    window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        
+        // Only show button if not already installed
+        if (!isPWAInstalled() && localStorage.getItem('pwaInstalled') !== 'true') {
+            showInstallButton();
+        }
+    });
+
+    // Install button click handler
+    installBtn.addEventListener("click", async () => {
+        if (!deferredPrompt) {
+            console.log("No install prompt available");
+            return;
+        }
+
+        // Hide button immediately when clicked
+        hideInstallButton();
+        
+        // Show the install prompt
+        deferredPrompt.prompt();
+        
+        // Wait for the user to respond
+        const { outcome } = await deferredPrompt.userChoice;
+        
+        if (outcome === 'accepted') {
+            console.log('User accepted the install prompt');
+            // Button is already hidden, and localStorage is set
+        } else {
+            console.log('User dismissed the install prompt');
+            // If user dismisses, show button again next time
+            localStorage.removeItem('pwaInstalled');
+        }
+        
+        deferredPrompt = null;
+    });
+
+    // Listen for app installed event
+    window.addEventListener("appinstalled", () => {
+        console.log("PWA was installed successfully");
+        hideInstallButton();
+        deferredPrompt = null;
+    });
+
+    // Register Service Worker
+    if ("serviceWorker" in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker
+                .register("/service-worker.js")
+                .then((registration) => {
+                    console.log("Service Worker registered ✅ Scope:", registration.scope);
+                })
+                .catch(err => console.log("SW registration failed:", err));
+        });
+    }
+
+    // Listen for display mode changes
+    window.matchMedia('(display-mode: standalone)').addEventListener('change', (evt) => {
+        if (evt.matches) {
+            console.log('App is running in standalone mode');
+            hideInstallButton();
+        }
+    });
 </script>
 </body>
 </html>
-
